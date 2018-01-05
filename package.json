@@ -1,0 +1,15 @@
+{
+  "name": "angularjs-start-pack",
+  "version": "1.0.0",
+  "description": "starter pack",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yauheni Karasiuk",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
