@@ -1,1 +1,58 @@
-<h1>I'm on the page 1</h1>
+<form name="snForm">
+	<button id="send-button" ng-click="send($event)" ng-disabled="snForm.$invalid" class="btn btn-primary">Send</button>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" name="username" id="username" placeholder="Username">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" name="password" id="password" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="request-type">Type of script</label>
+				<select class="form-control" name="request-type" id="request-type" ng-init="type='get'" ng-model="type" required>
+					<option value="get">Get</option>
+					<option value="update">Update</option>
+					<option value="delete">Delete</option>
+				</select>
+			</div>
+			<div class="form-group has-danger">
+				<label for="table">Table name</label>
+				<input type="text" class="form-control" name="table" id="table" placeholder="Table"
+				ng-init="table='incident'" ng-model="table" required>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label for="query">Query</label>
+				<input type="text" class="form-control" name="query" id="query" placeholder="Query" ng-model="params.sysparm_query">
+			</div>
+			<div class="form-group">
+				<label for="reference-format">Reference format</label>
+				<select class="form-control" name="reference-format" id="reference-format"
+					ng-model="params.sysparm_display_value" required>
+					<option value="true">Display value</option>
+					<option value="false">Value</option>
+					<option value="all">Both</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="fields">Fields</label>
+				<input type="text" class="form-control" name="fields" id="fields" placeholder="A comma-separated list of fields to return" ng-model="params.sysparm_fields">
+			</div>
+			<div class="form-group">
+				<label for="sys_id">Sys_id</label>
+				<input type="text" class="form-control" name="sys_id" id="sys_id" placeholder="Unique record indentificator" ng-model="sys_id" ng-required="type=='update' || type=='delete'">
+			</div>
+			<div class="form-group">
+				<label for="data">Data</label>
+				<textarea type="text" class="form-control" name="data" id="data" placeholder="Data to send" ng-model="data" ng-required="type=='update'">
+			</div>
+		</div>
+		<div class="col-md-4">
+			sss
+		</div>
+	</div>
+</form>
